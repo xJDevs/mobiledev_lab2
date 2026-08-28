@@ -1,10 +1,13 @@
 import { StyleSheet, Text, View } from "react-native";
+import { useEntries } from "../context/entries-context";
 
-export default function CaptureScreen() {
+export default function JournalScreen() {
+  const { entries } = useEntries();
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Capture</Text>
-      <Text>Camera coming soon</Text>
+      <Text style={styles.title}>Journal</Text>
+      <Text>{entries.length} entries</Text>
     </View>
   );
 }
